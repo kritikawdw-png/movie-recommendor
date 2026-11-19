@@ -1,4 +1,4 @@
-
+import os
 from tmdb import (
     get_movie_details,
     get_trending_movies,
@@ -22,9 +22,15 @@ app = FastAPI(
 )
 
 # Allow React frontend to communicate with FastAPI
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:5173"
+)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        FRONTEND_URL,
         "http://localhost:5173",
         "http://127.0.0.1:5173"
     ],
