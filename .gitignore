@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+backend/.cache/
+frontend/node_modules/
+frontend/dist/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
